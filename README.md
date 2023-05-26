@@ -29,17 +29,22 @@ Task [/api/tasks]
 - Move a task to another list [PATCH  movetonewlist/:id #task id]
  ``` body {
     "list_id" : #new list id
-  }```
+  }
+  ```
 - Reorder a task in a list [PATCH  reorder/:id #task id]
-  ```body {
+  ```
+  body {
 	"new_position" :  
-  }```
+  }
+  ```
 List [/api/lists]
 - Create a list [POST]
 - Update a list [PATCH  /:id]
-  ```body {
+  ```
+  body {
     "Title" :
-  }```
+  }
+  ```
 - Reorder a list [PATCH  reorder/:id #list id]
   ```body {
 	"new_position" :  
