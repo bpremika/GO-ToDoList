@@ -10,46 +10,56 @@
 3. ```go run main.go```
 
 ## API Documentation
-Task [/api/tasks]
-- Create a task [POST]
+**Task ```/api/tasks```
+- ```POST``` Create a task
+  ```
   body {
     "Description" : ,
     "Duedate" : ,
     "Position" : ,
     "ListID" : 
   }
-- Update a task [PATCH  /:id]
-```
+  ```
+- ```PATCH  /:id``` Update a task
+  ```
   body {
     "Description" : ,
     "Duedate" : 
   }
  ```
-- Delete a task [DELETE  /:id]
-- Move a task to another list [PATCH  movetonewlist/:id #task id]
+- ```DELETE  /:id``` Delete a task 
+- ```PATCH  movetonewlist/:id #task id``` Move a task to another list
  ```
  body {
     "list_id" : #new list id
   }
   ```
-- Reorder a task in a list [PATCH  reorder/:id #task id]
+- ```PATCH  reorder/:id #task id``` Reorder a task in a list
   ```
   body {
 	"new_position" :  
   }
   ```
-List [/api/lists]
-- Create a list [POST]
-- Update a list [PATCH  /:id]
+
+**List ```/api/lists```
+- ```POST``` Create a list 
+  ```
+  body {
+    "Title" : ,
+    "Position" : ,
+  }
+  ```
+- ```PATCH  /:id``` Update a list 
   ```
   body {
     "Title" :
   }
   ```
-- Reorder a list [PATCH  reorder/:id #list id]
+- ```PATCH  reorder/:id #list id``` Reorder a list 
   ```
   body {
 	"new_position" :  
-  }```
-- Delete a list, also every tasks in it [DELETE  /:id]
+  }
+  ```
+- ```DELETE  /:id``` Delete a list, also every tasks in it 
 
