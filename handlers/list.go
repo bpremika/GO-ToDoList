@@ -6,6 +6,7 @@ import (
 	"github.com/bpremika/go-toDoList/database"
 	"github.com/bpremika/go-toDoList/models"
 	"github.com/gofiber/fiber/v2"
+	"gorm.io/gorm"
 )
 
 func GetLists(c *fiber.Ctx) error {
@@ -32,8 +33,18 @@ func CreateList(c *fiber.Ctx) error {
 func DeleteList(c *fiber.Ctx) error {
 	id := c.Params("id")
 	list := models.List{}
+	lists := models.List{}
 	task := models.Task{}
 	res := database.DB.Db.Where("list_id = ?", id).Delete(&task)
+	if res.Error != nil {
+		return c.Status(500).JSON(fiber.Map{"status": "error", "message": res.Error})
+	}
+	res = database.DB.Db.Where("id = ?", id).Find(&list)
+	if res.Error != nil {
+		return c.Status(500).JSON(fiber.Map{"status": "error", "message": res.Error})
+	}
+	fmt.Println(list.Position)
+	res = database.DB.Db.Model(&lists).Where("position > ?", list.Position).UpdateColumn("position", gorm.Expr("position - ?", 1))
 	if res.Error != nil {
 		return c.Status(500).JSON(fiber.Map{"status": "error", "message": res.Error})
 	}
