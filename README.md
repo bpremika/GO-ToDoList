@@ -12,6 +12,7 @@
 ## API Documentation
 **Task** ```/api/tasks```
 - ```POST``` Create a task
+
   ```
   body {
     "Description" : ,
@@ -21,20 +22,23 @@
   }
   ```
 - ```PATCH  /:id``` Update a task
+
   ```
   body {
     "Description" : ,
     "Duedate" : 
   }
- ```
-- ```DELETE  /:id``` Delete a task 
+  ```
+- ```DELETE  /:id``` Delete a task
 - ```PATCH  movetonewlist/:id #task id``` Move a task to another list
- ```
- body {
+
+  ```
+  body {
     "list_id" : #new list id
   }
   ```
 - ```PATCH  reorder/:id #task id``` Reorder a task in a list
+
   ```
   body {
 	"new_position" :  
@@ -43,6 +47,7 @@
 
 **List** ```/api/lists```
 - ```POST``` Create a list 
+
   ```
   body {
     "Title" : ,
@@ -50,12 +55,14 @@
   }
   ```
 - ```PATCH  /:id``` Update a list 
+
   ```
   body {
     "Title" :
   }
   ```
 - ```PATCH  reorder/:id #list id``` Reorder a list 
+
   ```
   body {
 	"new_position" :  
