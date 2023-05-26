@@ -23,7 +23,6 @@ func ConnectDb() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	// dsn:= "host=localhost user=bpremika password=bolona1234 dbname=go-toDoList port=5432 sslmode=disable"
 	dsn := fmt.Sprintf(
 		"host=localhost user=%s password=%s dbname=%s port=5432 sslmode=disable",
 		os.Getenv("DB_USER"),
@@ -33,7 +32,6 @@ func ConnectDb() {
 
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{
 		Logger: logger.Default.LogMode(logger.Error),
-		
 	})
 
 	if err != nil {
