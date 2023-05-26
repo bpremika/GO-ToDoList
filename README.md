@@ -1,15 +1,15 @@
 # ChAMP Backend Assignment-ToDoList
-##How to set up project
-1.fill .env
+## How to set up project
+1. fill .env
 ```
-  -DB_USER
-  -DB_PASSWORD
-  -DB_NAME
+  - DB_USER
+  - DB_PASSWORD
+  - DB_NAME
 ```
 2. ```docker compose up ```
-3.```go run main.go```
+3. ```go run main.go```
 
-##API Documentation
+## API Documentation
 Task [/api/tasks]
 - Create a task [POST]
   body {
@@ -27,7 +27,8 @@ Task [/api/tasks]
  ```
 - Delete a task [DELETE  /:id]
 - Move a task to another list [PATCH  movetonewlist/:id #task id]
- ``` body {
+ ```
+ body {
     "list_id" : #new list id
   }
   ```
@@ -46,7 +47,8 @@ List [/api/lists]
   }
   ```
 - Reorder a list [PATCH  reorder/:id #list id]
-  ```body {
+  ```
+  body {
 	"new_position" :  
   }```
 - Delete a list, also every tasks in it [DELETE  /:id]
