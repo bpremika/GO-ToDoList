@@ -1,6 +1,6 @@
 # ChAMP Backend Assignment-ToDoList
 ## How to set up project
-1. fill .env
+1. create .env file
 ```
   - DB_USER
   - DB_PASSWORD
