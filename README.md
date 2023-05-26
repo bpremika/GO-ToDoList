@@ -11,6 +11,7 @@
 
 ## API Documentation
 **Task** ```/api/tasks```
+- ```GET``` Get all tasks
 - ```POST``` Create a task
 
   ```
@@ -30,14 +31,14 @@
   }
   ```
 - ```DELETE  /:id``` Delete a task
-- ```PATCH  movetonewlist/:id #task id``` Move a task to another list
+- ```PATCH  /movetonewlist/:id (task id)``` Move a task to another list
 
   ```
   body {
     "list_id" : #new list id
   }
   ```
-- ```PATCH  reorder/:id #task id``` Reorder a task in a list
+- ```PATCH  /reorder/:id (task id)``` Reorder a task in a list
 
   ```
   body {
@@ -46,6 +47,7 @@
   ```
 
 **List** ```/api/lists```
+- ```GET``` Get all lists
 - ```POST``` Create a list 
 
   ```
@@ -61,7 +63,7 @@
     "Title" :
   }
   ```
-- ```PATCH  reorder/:id #list id``` Reorder a list 
+- ```PATCH  /reorder/:id (list id)``` Reorder a list 
 
   ```
   body {
