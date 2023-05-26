@@ -10,7 +10,7 @@
 3. ```go run main.go```
 
 ## API Documentation
-**Task ```/api/tasks```
+**Task** ```/api/tasks```
 - ```POST``` Create a task
   ```
   body {
@@ -41,7 +41,7 @@
   }
   ```
 
-**List ```/api/lists```
+**List** ```/api/lists```
 - ```POST``` Create a list 
   ```
   body {
